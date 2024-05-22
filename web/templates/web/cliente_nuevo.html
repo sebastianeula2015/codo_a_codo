@@ -1,0 +1,24 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block titulo %}Cliente - Nuevo{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h2>Cliente - Nuevo</h2>
+        <form method="POST" action="{% url 'cliente_nuevo' %}">
+            {% csrf_token %}
+{#            {{ form }}#}
+            <div class="form-group"> <label for="apellido">Apellido:</label>{{ form.apellido }} </div>
+            <div class="form-group"> <label for="nombre">Nombre:</label>{{ form.nombre }} </div>
+            <div class="form-group"> <label for="dni">DNI:</label>{{ form.dni }} </div>
+            <div class="form-group"> <label for="Email">Email:</label>{{ form.email }} </div>
+            <div class="form-group"> <label for="telefono">Teléfono:</label>{{ form.telefono }} </div>
+            <div class="form-group"> <label for="provincia">Provincia:</label>{{ form.provincia }} </div>
+            <div class="form-group"> <label for="direccion">Dirección:</label>{{ form.direccion }} </div>
+            <input type="submit" value="Guardar" class="btn-primary">
+        </form>
+    </div>
+    <div class="alert-info">
+    {{ mensaje }}
+    </div>
+{% endblock %}

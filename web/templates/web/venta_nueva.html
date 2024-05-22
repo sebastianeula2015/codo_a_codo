@@ -1,0 +1,16 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block titulo %}Venta - Nueva{% endblock %}
+{% block extra_css %}
+{% endblock %}
+
+{% block main %}
+
+    <h2>Venta - Nueva</h2>
+    <form method="POST" action="{% url 'venta_nueva' %}">
+        {% csrf_token %}
+        {{ alta_alumno_form }}
+
+        <input type="submit">
+    </form>
+{% endblock %}
